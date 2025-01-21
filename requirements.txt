@@ -1,0 +1,11 @@
+# This file contains a list of Python dependencies that are required to run the application.
+# The packages specified in this file will be installed when the Docker container is built.
+
+#flask     # For web framework (if you plan to extend the app to use web-based clocking)
+#requests  # If your app makes HTTP requests (optional, depending on extension)
+#pytest    # Test Python
+
+flask==2.2.5          # Flask web framework
+requests==2.31.0      # HTTP requests library (if used in your project)
+pytest==7.4.0         # Testing framework for Python
+python-dotenv==1.0.0  # To load .env or .flaskenv files (as Flask suggests)
