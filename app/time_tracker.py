@@ -3,6 +3,7 @@ import json
 import os
 from datetime import datetime
 from app.utils import save_time_logs, load_time_logs
+from waitress import serve
 
 # Initialize the Flask application
 app = Flask(__name__)
@@ -126,4 +127,9 @@ def index():
 
 if __name__ == "__main__":
     # Start the Flask app
-    app.run(host="0.0.0.0", port=5000)
+    # app.run(host="0.0.0.0", port=5000)
+    serve(app, host="0.0.0.0", port=5000)
+    # serve(app, host="0.0.0.0", port=5001)
+    # app.run(host="127.0.0.1", port=5001)
+
+
