@@ -9,3 +9,4 @@ flask==2.2.5          # Flask web framework
 requests==2.31.0      # HTTP requests library (if used in your project)
 pytest==7.4.0         # Testing framework for Python
 python-dotenv==1.0.0  # To load .env or .flaskenv files (as Flask suggests)
+gunicorn
