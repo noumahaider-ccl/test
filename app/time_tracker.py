@@ -6,7 +6,7 @@ from app.utils import save_time_logs, load_time_logs
 from waitress import serve
 
 # Initialize the Flask application
-app = Flask(_name_)
+app = Flask(__name__)  # Change _name_ to __name__
 
 TIME_LOGS_FILE = "time_logs.json"  # Define the file to store time logs
 
@@ -125,7 +125,7 @@ def index():
     return jsonify({"message": "Welcome to the Time Tracker API. Use /clock_in/<user_id>, /clock_out/<user_id>, or /view_time_log/<user_id> to interact with the app."}), 200
 
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     # Start the Flask app
     # app.run(host="0.0.0.0", port=5000)
     serve(app, host="0.0.0.0", port=5000)
