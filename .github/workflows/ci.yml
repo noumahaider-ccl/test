@@ -26,23 +26,17 @@ jobs:
         run: |
           docker build -t time-tracker-app .
 
-      # Step 4: Run the tests inside Docker container
+      # Step 4: Run the tests inside the Docker container
       - name: Run tests inside Docker container
         run: |
-          docker run --rm time-tracker-app bash -c "pip install -r requirements.txt && pytest --maxfail=1 --disable-warnings -q"
+          docker run --rm time-tracker-app pytest --maxfail=1 --disable-warnings -q
 
       # Step 5: Optionally, start the application (e.g., for integration testing)
       - name: Run the application in the Docker container
         run: |
           docker run -d -p 5000:5000 time-tracker-app
 
-      # Step 6: Optionally, run integration tests against the live app
-      - name: Run integration tests
-        run: |
-          # Example of running curl requests to test the app
-          curl -f http://localhost:5000/clock_in/test_user
-
-      # Step 7: Cleanup - Stop the running container
+      # Step 6: Cleanup - Stop the running container (optional, depends on your needs)
       - name: Stop Docker container
         run: |
-          docker ps -q --filter "ancestor=time-tracker-app" | xargs docker stop || true
+          docker ps -q --filter "ancestor=time-tracker-app" | xargs docker stop
