@@ -125,8 +125,7 @@ def index():
     return jsonify({"message": "Welcome to the Time Tracker API. Use /clock_in/<user_id>, /clock_out/<user_id>, or /view_time_log/<user_id> to interact with the app."}), 200
 
 
-if _name_ == "_main_":
-    # Start the Flask app
+if __name__ == "__main__":  
     # app.run(host="0.0.0.0", port=5000)
     serve(app, host="0.0.0.0", port=5000)
     # serve(app, host="0.0.0.0", port=5001)
