@@ -6,7 +6,7 @@ from app.utils import save_time_logs, load_time_logs
 from waitress import serve
 
 # Initialize the Flask application
-app = Flask(_name_)
+app = Flask(__name__)  
 
 TIME_LOGS_FILE = "time_logs.json"  # Define the file to store time logs
 
